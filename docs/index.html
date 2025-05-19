@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="source/style.css">
+<meta charset="UTF-8">
+<title>Home</title>
+<link rel="icon" type="image/svg" href="Images/TWR Logo.svg">
+
+<style>
+    #banner {
+        overflow: hidden;
+        position: relative;
+        height: calc(100vh - 100px);
+        display: flex;
+        justify-content: center;
+        min-width: 100vw;
+    }
+
+    #banner img {
+        position: relative;
+    }
+
+    #banner p {
+        position: absolute;
+        font-weight: bold;
+        font-size: 10vw !important;
+        bottom: 0;
+        color: white;
+        text-shadow: 0 0 25px rgba(0, 0, 0, 1);
+    }
+
+    #paragraph {
+        padding: 5px 30px;
+        display: block;
+    }
+
+    #image-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        grid-template-rows: 1fr;
+        gap: 5%;
+        width: 100%;
+    }
+
+    #image-grid-item {
+        padding: 0;
+        text-align: center;
+        width: 100%;
+        display: block;
+        justify-content: center;
+    }
+
+    #image-grid-item img {
+        width: 100%;
+    }
+
+    #image-grid-item p {
+        text-align: left;
+        padding: 10px;
+    }
+
+</style>
+
+<body>
+    <div id="header"></div>
+    <div id="overlay"></div>
+
+    <main>
+        <div id="content">
+            <div id="banner">
+                <img src="Images/Menu/Banner.jpg" style="height: 100%;">
+                <p>HOME</p>
+            </div>
+            <div id="paragraph">
+                <h1>Landscapes</h1>
+                <div id="image-grid">
+                    <div id="image-grid-item">
+                        <img src="Images/Menu/LandscapeGrid/1.jpg">
+                    </div>
+                    <div id="image-grid-item">
+                        <img src="Images/Menu/LandscapeGrid/2.jpg">
+                    </div>
+                    <div id="image-grid-item">
+                        <img src="Images/Menu/LandscapeGrid/3.jpg">
+                    </div>
+                    <div id="image-grid-item">
+                        <img src="Images/Menu/LandscapeGrid/4.jpg">
+                    </div>
+                    <div id="image-grid-item">
+                        <img src="Images/Menu/LandscapeGrid/5.jpg">
+                    </div>
+                    <div id="image-grid-item">
+                        <img src="Images/Menu/LandscapeGrid/6.jpg">
+                    </div>
+                    <div id="image-grid-item">
+                        <img src="Images/Menu/LandscapeGrid/7.jpg">
+                    </div>
+                    <div id="image-grid-item">
+                        <img src="Images/Menu/LandscapeGrid/8.jpg">
+                    </div>
+                    <div id="image-grid-item">
+                        <img src="Images/Menu/LandscapeGrid/9.jpg">
+                    </div>
+                    <div id="image-grid-item">
+                        <img src="Images/Menu/LandscapeGrid/10.jpg">
+                    </div>
+                    <div id="image-grid-item">
+                        <img src="Images/Menu/LandscapeGrid/11.jpg">
+                    </div>
+                    <div id="image-grid-item">
+                        <img src="Images/Menu/LandscapeGrid/12.jpg">
+                    </div>
+                    <div id="image-grid-item">
+                        <img src="Images/Menu/LandscapeGrid/13.jpg">
+                    </div>
+                    <div id="image-grid-item">
+                        <img src="Images/Menu/LandscapeGrid/14.jpg">
+                    </div>
+                    <div id="image-grid-item">
+                        <img src="Images/Menu/LandscapeGrid/15.jpg">
+                    </div>
+                    
+                </div>
+                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                
+            </div>
+            
+        </div>
+
+        <div id="footer"></div>
+    </main>
+
+
+    <script>
+        // Load header
+        fetch("source/header.html")
+          .then(res => res.text())
+          .then(data => document.getElementById("header").innerHTML = data);
+
+        // Load footer
+        fetch("source/footer.html")
+          .then(res => res.text())
+          .then(data => document.getElementById("footer").innerHTML = data);
+        
+        function navButton() {
+            const navBar = document.getElementById("navBar")
+            const navButton = document.getElementById("navButton")
+            const overlay = document.getElementById("overlay");
+
+            if (navBar.style.width == "250px") {
+                navBar.style.width = "0px";
+                navButton.textContent = "☰";
+                overlay.classList.remove("active");
+
+            } else {
+                navBar.style.width = "250px";
+                navButton.textContent = "✖"
+                overlay.classList.add("active");
+            }           
+        }
+
+        document.getElementById("overlay").addEventListener("click", () => {
+            document.getElementById("navBar").style.width = "0px";
+            document.getElementById("navButton").textContent = "☰";
+            document.getElementById("overlay").classList.remove("active");
+        });
+    </script>
+
+
+</body>
+</html>
