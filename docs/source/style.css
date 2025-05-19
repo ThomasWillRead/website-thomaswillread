@@ -94,7 +94,7 @@ main {
 #content {
     margin-top: 18px;
     min-height: calc(100vh - 170px);
-    width: 100vw;
+    width: 90vw;
 }
 
 #content h1 {
