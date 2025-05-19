@@ -1,0 +1,23 @@
+<header>
+    <img src="../Images/TWR Logo white.svg" >
+    <button id="navButton" onclick="navButton()" style="cursor: pointer;">☰</button>
+</header>
+
+<div id="navBar" class="navBar">
+    <a href="index.html">Home</a></br>
+    <a href="underconstruction.html">Models</a></br>
+</div>
+
+<script>
+    function navButton() {
+        const navBar = document.getElementById("navBar")
+        const navButton = document.getElementById("navButton")
+        if (navBar.style.width == "250px") {
+            navBar.style.width = "0px";
+            navButton.textContent = "☰";
+        } else {
+            navBar.style.width = "250px";
+            navButton.textContent = "✖"
+        }           
+    }
+</script>
