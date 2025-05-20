@@ -13,6 +13,8 @@
         display: flex;
         justify-content: center;
         min-width: 100%;
+        min-height: 30vw;
+        max-height: 50vw;
     }
 
     #banner img {
@@ -36,14 +38,15 @@
     #image-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-        grid-template-rows: 1fr;
         gap: 5%;
         width: 100%;
+        /* Removed grid-template-rows: 1fr */
     }
 
     #image-grid-item {
         padding: 0;
         text-align: center;
+        height: 100%;
         width: 100%;
         display: block;
         justify-content: center;
@@ -69,59 +72,6 @@
             <div id="banner">
                 <img src="Images/Menu/Banner.jpg" style="height: 100%;">
                 <p>HOME</p>
-            </div>
-            <div id="paragraph">
-                <h1>Landscapes</h1>
-                <div id="image-grid">
-                    <div id="image-grid-item">
-                        <img src="Images/Menu/LandscapeGrid/1.jpg">
-                    </div>
-                    <div id="image-grid-item">
-                        <img src="Images/Menu/LandscapeGrid/2.jpg">
-                    </div>
-                    <div id="image-grid-item">
-                        <img src="Images/Menu/LandscapeGrid/3.jpg">
-                    </div>
-                    <div id="image-grid-item">
-                        <img src="Images/Menu/LandscapeGrid/4.jpg">
-                    </div>
-                    <div id="image-grid-item">
-                        <img src="Images/Menu/LandscapeGrid/5.jpg">
-                    </div>
-                    <div id="image-grid-item">
-                        <img src="Images/Menu/LandscapeGrid/6.jpg">
-                    </div>
-                    <div id="image-grid-item">
-                        <img src="Images/Menu/LandscapeGrid/7.jpg">
-                    </div>
-                    <div id="image-grid-item">
-                        <img src="Images/Menu/LandscapeGrid/8.jpg">
-                    </div>
-                    <div id="image-grid-item">
-                        <img src="Images/Menu/LandscapeGrid/9.jpg">
-                    </div>
-                    <div id="image-grid-item">
-                        <img src="Images/Menu/LandscapeGrid/10.jpg">
-                    </div>
-                    <div id="image-grid-item">
-                        <img src="Images/Menu/LandscapeGrid/11.jpg">
-                    </div>
-                    <div id="image-grid-item">
-                        <img src="Images/Menu/LandscapeGrid/12.jpg">
-                    </div>
-                    <div id="image-grid-item">
-                        <img src="Images/Menu/LandscapeGrid/13.jpg">
-                    </div>
-                    <div id="image-grid-item">
-                        <img src="Images/Menu/LandscapeGrid/14.jpg">
-                    </div>
-                    <div id="image-grid-item">
-                        <img src="Images/Menu/LandscapeGrid/15.jpg">
-                    </div>
-                    
-                </div>
-                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-                
             </div>
             
         </div>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="../../source/style.css">
+<meta charset="UTF-8">
+<title>Home</title>
+<link rel="icon" type="image/svg" href="../../Images/TWR Logo.svg">
+
+<style>
+    
+</style>
+
+<body>
+    <div id="header"></div>
+    <div id="overlay"></div>
+
+    <main>
+        <div id="content">
+            <div id="banner" style="min-height: 40vw !important;">
+                <img src="Banner.jpg" style="height: 100%; min-height: 80vh;">
+                <p>Planes</p>
+            </div>
+
+            <div id="paragraph">
+                <h1>Concorde</h1>
+
+                <div id="concorde" class="image-grid"></div>
+
+                <script>
+                    const imageFolderConcorde = 'Concorde/';
+                    const imageFilesConcorde = ['1.jpg', '2.jpg', '3.jpg'];
+
+                    const ConcordeGrid = document.getElementById('concorde');
+
+                    imageFilesConcorde.forEach(file => {
+                        const img = document.createElement('img');
+                        img.src = imageFolderConcorde + file;
+                        ConcordeGrid.appendChild(img);
+                        img.id = "image-grid-item";
+                    });
+                </script>
+
+            </div>
+            
+            <div id="paragraph" style="padding-top: 5%;">
+                <h1>RIAT 2022</h1>
+
+                <div id="RIAT" class="image-grid"></div>
+
+                <script>
+                    const imageFolderRIAT = 'RIAT 2022/';
+                    const imageFilesRIAT = ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg', '8.jpg', '9.jpg', '10.jpg', '11.jpg', '12.jpg'];
+
+                    const gridRIAT = document.getElementById('RIAT');
+
+                    imageFilesRIAT.forEach(file => {
+                        const img = document.createElement('img');
+                        img.src = imageFolderRIAT + file;
+                        gridRIAT.appendChild(img);
+                        img.id = "image-grid-item";
+                    });
+                </script>
+            </div>
+
+            <div id="paragraph" style="padding-top: 5%;">
+                <h1>Cornwall Aviation Heritage Centre</h1>
+
+                <div id="Heritage" class="image-grid"></div>
+
+                <script>
+                    const imageFolderHeritage = 'Heritage Aircraft Museum/';
+                    const imageFilesHeritage = ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg', '8.jpg', '9.jpg', '10.jpg', '11.jpg'];
+
+                    const gridHeritage = document.getElementById('Heritage');
+
+                    imageFilesHeritage.forEach(file => {
+                        const img = document.createElement('img');
+                        img.src = imageFolderHeritage + file;
+                        gridHeritage.appendChild(img);
+                        img.id = "image-grid-item";
+                    });
+                </script>
+            </div>
+
+            <p>‎</p>
+        </div>
+
+        <div id="footer"></div>
+    </main>
+
+
+    <script>
+        // Load header
+        fetch("../../source/header.html")
+          .then(res => res.text())
+          .then(data => document.getElementById("header").innerHTML = data);
+
+        // Load footer
+        fetch("../../source/footer.html")
+          .then(res => res.text())
+          .then(data => document.getElementById("footer").innerHTML = data);
+        
+        function navButton() {
+            const navBar = document.getElementById("navBar")
+            const navButton = document.getElementById("navButton")
+            const overlay = document.getElementById("overlay");
+
+            if (navBar.style.width == "250px") {
+                navBar.style.width = "0px";
+                navButton.textContent = "☰";
+                overlay.classList.remove("active");
+
+            } else {
+                navBar.style.width = "250px";
+                navButton.textContent = "✖"
+                overlay.classList.add("active");
+            }           
+        }
+
+        document.getElementById("overlay").addEventListener("click", () => {
+            document.getElementById("navBar").style.width = "0px";
+            document.getElementById("navButton").textContent = "☰";
+            document.getElementById("overlay").classList.remove("active");
+        });
+    </script>
+
+
+</body>
+</html>
