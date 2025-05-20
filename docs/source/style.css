@@ -2,6 +2,7 @@ body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     overflow-x: hidden;
+    width: 100%;
 }
 
 
@@ -68,9 +69,11 @@ main {
     background-color: white;
     color: black;
     position: static;
+    display: block;
 
     min-height: calc(100vh - 100px);
     padding-top: 82px;
+    width: 100vw;
 }
 
 #overlay {
@@ -92,9 +95,11 @@ main {
 }
 
 #content {
+    display: block;
+    justify-content: center;
     margin-top: 18px;
     min-height: calc(100vh - 170px);
-    width: 100vw;
+    width: 100%;
 }
 
 #content h1 {
@@ -114,7 +119,8 @@ footer {
     background-color: #252525;
     color: rgb(185, 185, 185);
     padding: 10px 30px;
-    width: 100vw;
+    right: 0;
+    left: 0;
 
     height: 50px;
     bottom: 0;
