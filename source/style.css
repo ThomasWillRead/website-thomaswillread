@@ -49,6 +49,7 @@ header button{
     transition: width 0.7s ease;
     z-index: 99;
     box-shadow: -4px 0 8px rgba(0, 0, 0, 0.4);
+    white-space: nowrap;
 }
 
 #navBar a {
@@ -152,7 +153,6 @@ main {
     #image-grid-item {
         padding: 0;
         text-align: center;
-        height: 100%;
         width: 100%;
         display: block;
         justify-content: center;
@@ -163,7 +163,6 @@ main {
     #image-grid-item2 {
         padding: 0;
         text-align: center;
-        height: 100%;
         width: 100%;
         display: block;
         justify-content: center;
