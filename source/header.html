@@ -1,0 +1,29 @@
+<header>
+    <img src="/Images/TWR Logo white.svg" >
+    <button id="navButton" onclick="navButton()" style="cursor: pointer;">☰</button>
+</header>
+
+<div id="navBar" class="navBar">
+    <a href="/" style="border-bottom: 3px solid white;">Home</a></br>
+    <a href="/models/" style="border-bottom: 3px solid white;">Models</a></br>
+    <a href="/photography/landscapes/" style="border-bottom: 3px solid white;">Photography</a></br>
+    <div style="padding-left: 25px;">
+        <a href="/photography/landscapes/">Landscapes</a></br>
+        <a href="/photography/cities/">Cities</a></br>
+        <a href="/photography/planes/">Planes</a></br>
+    </div>
+</div>
+
+<script>
+    function navButton() {
+        const navBar = document.getElementById("navBar")
+        const navButton = document.getElementById("navButton")
+        if (navBar.style.width == "250px") {
+            navBar.style.width = "0px";
+            navButton.textContent = "☰";
+        } else {
+            navBar.style.width = "250px";
+            navButton.textContent = "✖"
+        }           
+    }
+</script>
