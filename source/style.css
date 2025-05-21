@@ -123,6 +123,7 @@ main {
         min-width: 100%;
         min-height: 30vw;
         max-height: 50vw;
+        box-shadow: -4px 0 12px rgba(0, 0, 0, 0.4);
     }
 
     #banner img {

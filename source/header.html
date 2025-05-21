@@ -3,15 +3,22 @@
     <button id="navButton" onclick="navButton()" style="cursor: pointer;">☰</button>
 </header>
 
+<style>
+  #nav-bar-photos.expanded {
+    max-height: 300px;
+  }
+</style>
+
 <div id="navBar" class="navBar">
     <a href="/" style="border-bottom: 3px solid white;">Home</a></br>
-    <a href="/models/" style="border-bottom: 3px solid white;">Models</a></br>
     <a href="/my-photos/" style="border-bottom: 3px solid white;">My Photos</a></br>
-    <div style="padding-left: 25px;">
-        <a href="/my-photos/landscapes/">Landscapes</a></br>
-        <a href="/my-photos/cities/">Cities</a></br>
-        <a href="/my-photos/planes/">Planes</a></br>
+    <div id="nav-bar-photos" style="padding-left: 25px;">
+        <a href="/my-photos/landscapes/">Landscapes</a><br>
+        <a href="/my-photos/cities/">Cities</a><br>
+        <a href="/my-photos/planes/">Planes</a><br>
     </div>
+    
+    <a href="/models/" style="border-bottom: 3px solid white;">Models</a></br>
 </div>
 
 <script>
