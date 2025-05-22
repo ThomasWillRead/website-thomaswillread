@@ -1,36 +1,16 @@
 <header>
-    <img src="/Images/TWR Logo white.svg" >
-    <button id="navButton" onclick="navButton()" style="cursor: pointer;">☰</button>
+    <img src="/source/images/icon/TWR-Logo-Dark.svg" >
+    <button id="nav-button" onclick="navButton()">☰</button>
 </header>
 
-<style>
-  #nav-bar-photos.expanded {
-    max-height: 300px;
-  }
-</style>
 
-<div id="navBar" class="navBar">
-    <a href="/" style="border-bottom: 3px solid white;">Home</a></br>
-    <a href="/my-photos/" style="border-bottom: 3px solid white;">My Photos</a></br>
-    <div id="nav-bar-photos" style="padding-left: 25px;">
-        <a href="/my-photos/landscapes/">Landscapes</a><br>
-        <a href="/my-photos/cities/">Cities</a><br>
-        <a href="/my-photos/planes/">Planes</a><br>
+<div id="nav-bar">
+    <a href="/">Home</a>
+    <a href="/my-photos/">My Photos</a>
+    <div id="nav-bar-sub">
+        <a href="/my-photos/landscapes/">Landscapes</a>
+        <a href="/my-photos/cities/">Cities</a>
+        <a href="/my-photos/planes/">Planes</a>
     </div>
-    
-    <a href="/models/" style="border-bottom: 3px solid white;">Models</a></br>
+    <a href="/models/">Models</a>
 </div>
-
-<script>
-    function navButton() {
-        const navBar = document.getElementById("navBar")
-        const navButton = document.getElementById("navButton")
-        if (navBar.style.width == "250px") {
-            navBar.style.width = "0px";
-            navButton.textContent = "☰";
-        } else {
-            navBar.style.width = "250px";
-            navButton.textContent = "✖"
-        }           
-    }
-</script>

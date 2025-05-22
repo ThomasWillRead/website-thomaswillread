@@ -1,116 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<link rel="stylesheet" href="source/style.css">
-<meta charset="UTF-8">
-<title>Home</title>
-<link rel="icon" href="/Images/TWR Logo.svg" media="(prefers-color-scheme: light)">
-<link rel="icon" href="/Images/TWR Logo white.svg" media="(prefers-color-scheme: dark)">
 
-<style>
-    
-
-</style>
+<head id="head">
+    <title>Home</title>
+    <meta name="description" content="">
+    <script src="/source/pageSetUp.js" defer></script>
+</head>
 
 <body>
     <div id="header"></div>
-    <div id="overlay"></div>
+    
+    <div id="banner">
+        <img src="/source/images/menu/Banner.jpg">
+        <p>Home</p>
+    </div>
 
-    <main>
-        <div id="content">
-            <div id="banner">
-                <img src="Images/Menu/Banner.jpg" style="height: 100%;">
-                <p>Home</p>
-            </div>
-            
-        </div>
-
-        <div id="footer"></div>
-    </main>
-
-
-    <script>
-        // Load header
-        fetch("source/header.html")
-          .then(res => res.text())
-          .then(data => document.getElementById("header").innerHTML = data);
-
-        // Load footer
-        fetch("source/footer.html")
-          .then(res => res.text())
-          .then(data => document.getElementById("footer").innerHTML = data);
-        
-        function navButton() {
-            const navBar = document.getElementById("navBar")
-            const navButton = document.getElementById("navButton")
-            const overlay = document.getElementById("overlay");
-
-            if (navBar.style.width == "250px") {
-                navBar.style.width = "0px";
-                navButton.textContent = "☰";
-                overlay.classList.remove("active");
-
-            } else {
-                navBar.style.width = "250px";
-                navButton.textContent = "✖"
-                overlay.classList.add("active");
-            }           
-        }
-
-        document.getElementById("overlay").addEventListener("click", () => {
-            document.getElementById("navBar").style.width = "0px";
-            document.getElementById("navButton").textContent = "☰";
-            document.getElementById("overlay").classList.remove("active");
-        });
-    </script>
-
-    <script>
-  // Your existing navButton function
-  function navButton() {
-    const navBar = document.getElementById("navBar")
-    const navButton = document.getElementById("navButton")
-    const overlay = document.getElementById("overlay");
-
-    if (navBar.style.width == "250px") {
-      navBar.style.width = "0px";
-      navButton.textContent = "☰";
-      overlay.classList.remove("active");
-    } else {
-      navBar.style.width = "250px";
-      navButton.textContent = "✖"
-      overlay.classList.add("active");
-    }           
-  }
-
-  // photosButton toggles expanded state for the photos submenu
-  function photosButton() {
-    const photos = document.getElementById("nav-bar-photos");
-    const btn = document.getElementById("nav-bar-photos-button");
-    if (!photos) return;  // safety check
-
-    if (photos.style.maxHeight && photos.style.maxHeight !== "0px") {
-      photos.style.maxHeight = "0px";
-      btn.textContent = "+";
-    } else {
-      photos.style.maxHeight = photos.scrollHeight + "px"; // smooth expand
-      btn.textContent = "−";
-    }
-  }
-
-  document.getElementById("overlay").addEventListener("click", () => {
-    document.getElementById("navBar").style.width = "0px";
-    document.getElementById("navButton").textContent = "☰";
-    document.getElementById("overlay").classList.remove("active");
-
-    // Also close photos submenu when nav closes
-    const photos = document.getElementById("nav-bar-photos");
-    const btn = document.getElementById("nav-bar-photos-button");
-    if (photos) {
-      photos.style.maxHeight = "0px";
-      btn.textContent = "+";
-    }
-  });
-</script>
-
-
+    <div id="footer"></div>
 </body>
 </html>
+
+

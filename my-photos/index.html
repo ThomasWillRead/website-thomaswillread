@@ -1,99 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<link rel="stylesheet" href="../../source/style.css">
-<meta charset="UTF-8">
-<title>My Photos</title>
-<link rel="icon" href="/Images/TWR Logo.svg" media="(prefers-color-scheme: light)">
-<link rel="icon" href="/Images/TWR Logo white.svg" media="(prefers-color-scheme: dark)">
+
+<head id="head">
+    <title>My Photos</title>
+    <meta name="description" content="">
+    <script src="/source/pageSetUp.js" defer></script>
+</head>
 
 <style>
-    #image-grid-item h1 {
-        font-size: 70px;
+    #image-grid a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #image-grid h1 {
+        font-size: 70px !important;
         position: absolute;
         color: #ffffff;
-        text-shadow: 0 0 10px rgba(0, 0, 0, 0.5)
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        text-align: center;
     }
 </style>
 
 <body>
     <div id="header"></div>
-    <div id="overlay"></div>
+    <div id="banner">
+        <img src="Banner.jpg">
+        <p>My Photos</p>
+    </div>
 
-    <main>
-        <div id="content">
-            <div id="banner" style="min-height: 40vw !important;">
-                <img src="Banner.JPG" style="height: 100%; min-height: 80vh;">
-                <p>My Photos</p>
-            </div>
-            <p>‎</p>
-
-            <div id="paragraph">
-                <div id="grid" class="image-grid">
-                    <a href="/photography/cities/">
-                        <div id="image-grid-item" style="display: flex; align-items: center;">
-                            <img id="image-grid-item" src="cities/London/5.jpg" style="width: 100%;">
-                            <h1>Cities</h1>
-                        </div>
-                    </a>
-                    
-                    <a href="/photography/planes/">
-                        <div id="image-grid-item" style="display: flex; align-items: center;">
-                            <img id="image-grid-item" src="planes/RIAT 2022/11.jpg" style="width: 100%;">
-                            <h1>Planes</h1>
-                        </div>
-                    </a>
-
-                    <a href="/photography/landscapes/">
-                        <div id="image-grid-item" style="display: flex; align-items: center;">
-                            <img id="image-grid-item" src="landscapes/Dartmoor/4.jpg" style="width: 100%;">
-                            <h1>Landscapes</h1>
-                        </div>
-                    </a>
-                </div>
-
-            </div>
-            <p>‎</p>
+    <div id="content">
+        <div id="image-grid">
+            <a href="/my-photos/landscapes/">
+                <img id="image-grid-item-landscape" src="landscapes/images/dartmoor/4.jpg">
+                <h1>Landscapes</h1>
+            </a>
+            
+            <a href="/my-photos/cities/">
+                <img id="image-grid-item-landscape" src="cities/images/london/5.jpg">
+                <h1>Cities</h1>
+            </a>
+            
+            <a href="/my-photos/planes/">
+                <img id="image-grid-item-landscape" src="planes/images/riat-2022/11.jpg">
+                <h1>Planes</h1>
+            </a>
+            
         </div>
-
-        <div id="footer"></div>
-    </main>
-
-
-    <script>
-        // Load header
-        fetch("../../source/header.html")
-          .then(res => res.text())
-          .then(data => document.getElementById("header").innerHTML = data);
-
-        // Load footer
-        fetch("../../source/footer.html")
-          .then(res => res.text())
-          .then(data => document.getElementById("footer").innerHTML = data);
         
-        function navButton() {
-            const navBar = document.getElementById("navBar")
-            const navButton = document.getElementById("navButton")
-            const overlay = document.getElementById("overlay");
+    </div>
 
-            if (navBar.style.width == "250px") {
-                navBar.style.width = "0px";
-                navButton.textContent = "☰";
-                overlay.classList.remove("active");
-
-            } else {
-                navBar.style.width = "250px";
-                navButton.textContent = "✖"
-                overlay.classList.add("active");
-            }           
-        }
-
-        document.getElementById("overlay").addEventListener("click", () => {
-            document.getElementById("navBar").style.width = "0px";
-            document.getElementById("navButton").textContent = "☰";
-            document.getElementById("overlay").classList.remove("active");
-        });
-    </script>
-
-
+    <div id="footer"></div>
 </body>
 </html>
+
+
