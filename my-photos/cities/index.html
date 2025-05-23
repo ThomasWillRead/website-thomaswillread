@@ -17,42 +17,58 @@
     <div id="content">
         <img style="width: 100%;" src="images/london/london-skyline.png">
         <h1 style="text-align: center;">London</h1>
-        <div id="image-grid">
-            <img id="image-grid-item-landscape" src="images/london/1.jpg">
-            <img id="image-grid-item-landscape" src="images/london/2.jpg">
-            <img id="image-grid-item-landscape" src="images/london/3.jpg">
-            <img id="image-grid-item-landscape" src="images/london/4.jpg">
-            <img id="image-grid-item-landscape" src="images/london/5.jpg">
-            <img id="image-grid-item-landscape" src="images/london/6.jpg">
-        </div>
+        <div class="image-grid" data-folder="london"></div>
 
         <img style="width: 100%; padding-top: 5%;" src="images/paris/paris-skyline.png">
         <h1 style="text-align: center;">Paris</h1>
-        <div id="image-grid">
-            <img id="image-grid-item-landscape" src="images/paris/2.jpg">
-            <img id="image-grid-item-landscape" src="images/paris/3.jpg">
-            <img id="image-grid-item-landscape" src="images/paris/4.jpg">
-            <img id="image-grid-item-landscape" src="images/paris/5.jpg">
-            <img id="image-grid-item-landscape" src="images/paris/6.jpg">
-            <img id="image-grid-item-landscape" src="images/paris/7.jpg">
-            <img id="image-grid-item-landscape" src="images/paris/8.jpg">
-            <img id="image-grid-item-landscape" src="images/paris/9.jpg">
-            <img id="image-grid-item-landscape" src="images/paris/10.jpg">
-
-            <img id="image-grid-item-portrait" src="images/paris/b.jpg">
-            <img id="image-grid-item-portrait" src="images/paris/c.jpg">
-            <img id="image-grid-item-portrait" src="images/paris/d.jpg">
-            <img id="image-grid-item-portrait" src="images/paris/e.jpg">
-            <img id="image-grid-item-portrait" src="images/paris/f.jpg">
-            <img id="image-grid-item-portrait" src="images/paris/g.jpg">
-            <img id="image-grid-item-portrait" src="images/paris/h.jpg">
-            <img id="image-grid-item-portrait" src="images/paris/i.jpg">
-        </div>
+        <div class="image-grid" data-folder="paris"></div>
 
     </div>
 
     <div id="footer"></div>
 </body>
+
+<script>
+const grids = document.getElementsByClassName("image-grid");
+
+async function loadImagesForGrid(grid) {
+    const id = grid.id;
+    let isDone = false;
+      let j = 1;
+
+    while (!isDone) {
+        const filePath = `images/${id}/${j}.jpg`; // assuming .jpg, add extension
+
+    try {
+      const response = await fetch(filePath);
+      if (response.ok) {
+        const newImage = document.createElement("img");
+        newImage.src = filePath;
+        grid.appendChild(newImage);
+        j++;
+      } else {
+        isDone = true;  // stop loop when file not found
+      }
+    } catch (error) {
+      isDone = true; // stop on fetch error
+    }
+  }
+}
+
+// Run for all grids
+for (let i = 0; i < grids.length; i++) {
+  loadImagesForGrid(grids[i]);
+}
+
+
+
+        
+
+        
+
+
+</script>
+
 </html>
 
 

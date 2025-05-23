@@ -124,19 +124,14 @@ header img {
 }
 
 
-#image-grid {
+.image-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 30px;
 }
-#image-grid-item-landscape {
+#image-grid-item {
     width: 100%;
-    aspect-ratio: 16/9;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
-}
-#image-grid-item-portrait {
-    width: 100%;
-    aspect-ratio: 9/16;
+
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
 }
 
