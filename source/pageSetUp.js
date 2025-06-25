@@ -20,14 +20,19 @@ fetch("/source/footer.html")
 function navButton() {
         const navBar = document.getElementById("nav-bar")
         const navButton = document.getElementById("nav-button")
-        if (navBar.style.width == "250px") {
+        const overlay = document.getElementById("overlay")
+        if (navBar.style.width == "350px") {
             navBar.style.width = "0px";
             navButton.textContent = "☰";
+            overlay.style.opacity = 0
         } else {
-            navBar.style.width = "250px";
+            navBar.style.width = "350px";
             navButton.textContent = "✖"
+            overlay.style.opacity = 1
         }           
     }
+
+
 
 
 
